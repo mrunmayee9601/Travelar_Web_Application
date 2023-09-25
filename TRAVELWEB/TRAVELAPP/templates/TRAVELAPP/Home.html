@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Home1.css' %}"  />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="v114_4">
+        <div class="v185_0">
+            <ul>
+                <li class="active"><a href="{% url 'home' %}">Home</a> </li>
+                <li><a href="{% url 'packages' %}">Packages</a> </li>
+                <li><a href="{% url 'hotel' %}">Hotels</a> </li>
+                <li><a href="{% url 'flights' %}">Flights</a> </li>
+                <li><a href="{% url 'review' %}">Reviews</a> </li>
+                <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+            </ul>
+
+            <div class="v183_0"></div>
+        </div>
+        <span class="v183_2">Travelar</span>
+        <div class="v223_2"><span class="v101_24">One Click for
+            </span><span class="v207_5">Vacation?</span>
+            </div>
+        <div class="v213_2"></div>
+        <div class="v213_7"></div>
+        <span class="v213_15">Why Travelar?
+
+            <br> The experience of booking your flights, hotel stay , amazing and reasonable holiday packages through
+            our site can be done with complete ease.
+            So hence enjoy your trips and keep making memories with TRAVELAR</span>
+    </div>
+    <span id="user">Hello, {{request.user}} </span>
+    <div class="log1">
+    <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+    </div>
+    {% if cnfp.fname == request.user.first_name %}
+    <span id="cnfp">Thankyou for Booking with Travelar.Booking for {{request.user}} of {{cnfp.name}} on {{cnfp.date}} has been confirmed.You will shortly receive a mail regarding the booking details</span>
+    {% else %}
+    <span></span>
+    {% endif %}
+    {% if Cnf.fname == request.user.first_name %}
+    <span id="cnf">Thankyou for Booking with Travelar.Booking for {{request.user}} of {{Cnf.name}} on {{Cnf.indate}} has been confirmed.You will shortly receive a mail regarding the booking details</span>
+    {% else %}
+    <span></span>
+    {% endif %}
+    {% if Search.user == request.user.username %}
+    <span id="cnf1">Thankyou for Booking with Travelar.Booking for {{request.user}} of {{info.airline}} on {{Search.date}} has been confirmed.You will shortly receive a mail regarding the booking details</span>
+    {% else %}
+    <span></span>
+    {% endif %}
+    {% if s.fname == request.user.first_name %}
+    <span id="cnf2">Thankyou for your feedback given to Travelar.Review given by {{s.fname}} is received.You will soon receive a confirmation mail</span>
+    {% else %}
+    <span></span>
+    {% endif %}
+
+
+
+</body>
+
+</html>

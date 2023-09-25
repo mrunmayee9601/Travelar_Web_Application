@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hotel.css' %}"  />
+    <title>Document</title>
+</head>
+<body>
+    <div class="v1_2">
+        <span class="v42_31">Hospitality Is Simply An Opportunity To Show Love And Care !
+         <div class="hotelinfo">
+             <form action="{% url 'Hotelinfo' %}" method="post">
+                 {% csrf_token %}
+                <div id="labels">
+                    <label>Select City:</label>
+                    <select name="Cities" id="Cities" required>
+                        <option value="">None</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Shimla">Shimla</option>
+                      </select><br>
+                    <label>Check-In Date:</label>
+                    <input type="date" id="checkin" name="checkin" required><br>
+                    <label>Check-Out Date:</label>
+                    <input type="date" id="checkout" name="checkout" required><br>
+                    <label>No of Rooms:</label>
+                    <select name="rooms" id="rooms" required>
+                        <option value="">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select><br>
+                      <button type="submit">Search</button>
+                </div>
+             </form>
+         </div>
+        </span>
+         <div class="v185_0">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a> </li>
+                <li><a href="{% url 'packages' %}">Packages</a> </li>
+                <li class="active"><a href="{% url 'hotel' %}">Hotels</a> </li>
+                <li><a href="{% url 'flights' %}">Flights</a> </li>
+                <li><a href="{% url 'review' %}">Reviews</a> </li>
+                <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+            </ul>
+
+            <div class="v183_0"></div>
+        </div>
+        <div class="v50_2"></div>
+        <div class="v50_13">
+            <span class="v50_8">Goa </span><span class="v50_9">Mumbai</span><span
+                class="v50_10">Delhi</span><span class="v50_11">Shimla</span>
+        </div><span class="v50_7">Destinations we offer</span>
+        <div class="v50_19">
+            <div class="v50_14"></div>
+            <div class="v50_17"></div>
+            <div class="v50_15"></div>
+            <div class="v52_0"></div>
+        </div>
+       <span class="v51_5">Travelar</span>
+        <span id="user">Hello, {{request.user}} </span>
+        <div class="log1">
+    <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+    </div>
+
+    </div>
+</body>
+
+</html>

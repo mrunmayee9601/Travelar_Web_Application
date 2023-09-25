@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><head>
+
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/Fconfirm.css' %}"  />
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+
+    <title>Document</title></head>
+    <body>
+        <div class="v229_2">
+
+            <div class="v229_3"></div>
+            <span class="v229_6">BOOK YOUR Flight</span>
+            <form method="POST" action="{% url 'flightdone' %}">
+                {% csrf_token %}
+            <span class="v229_7"></span>
+            <div class="v230_6">
+            <input type="text" id="fname" name="fname"required readonly value="{{fname}}"></div>
+            <div class="v238_8">
+            <input type="text" id="check-in" name="check-in"required readonly value="{{Search.date}}"></div>
+            <div class="v238_21">
+            <input type="text" id="seats" name="seats"required  readonly value="{{Search.seats}}"></div>
+            <div class="v239_0">
+            <input type="text" id="airline" name="airline"required readonly value="{{info.airline}}"></div>
+            <div class="v239_6">
+            <input type="text" id="travelers" name="travelers"required readonly value="{{Search.type}}"></div>
+            <div class="v238_16">
+            <input type="text" id="phn" name="phn" required ></div>
+            <div class="v238_22">
+            <input type="text" id="email" name="email"required readonly value="{{mail}}"></div>
+            <div class="v239_1">
+             <input type="text" id="dtime" name="dtime" required readonly value="{{info.departure}}"></div>
+            <div class="v240_10">
+             <input type="text" id="Tamount" name="Tamount1"required readonly value="{{total}}" ></div>
+             <div class="new">
+              <input type="text" id="price" name="Tamount" required readonly value="{{Search.boarding}}"></div>
+            <div class="From">
+                <input type="text" id="from" name="from"required readonly value="{{Search.destination}}"></div>
+                <div class="atime">
+                  <input type="text" id="atime" name="atime"required readonly value="{{info.arrival}}"></div>
+
+
+            <span class="v233_9"> Full name:</span>
+            <span class="v242_20">Confirmation Page</span>
+            <span class="v243_0">Thank you so much for booking with Travelar<br>Kindly enter your Mobile Number</span>
+            <span class="v233_12">Date of travel :</span>
+            <span class="v238_23">Total Seats:</span>
+            <span class="d1">From:</span>
+            <span class="to">To:</span>
+            <span class="v239_2">Airline:</span>
+            <span class="v238_28">Email id:</span>
+            <span class="v239_5">Departure Time</span>
+            <span class="dtime">Arrival Time:</span>
+            <span class="v240_5">Total amount :</span>
+            <span class="v239_9">Class:</span>
+            <span class="v238_19">Phone no :</span>
+            <span class="v238_2">Travelar</span>
+
+              <div class="v212_12">
+                <input type="submit" value="Confirm" id="sub">
+            </div>
+
+            <a href="{% url 'flights' %}">Back</a>
+
+           <div class= "p239">
+             <span class="p239_9">Mode of payment:</span>
+<label class="container">Debit/Credit card
+  <input type="radio" checked="checked" name="radio"value="Debit/Credit card" required>
+  <span class="checkmark"></span>
+</label>
+<label class="container">UPI
+  <input type="radio" name="radio" value="UPI" required>
+  <span class="checkmark"></span>
+</label>
+<label class="container">Cash
+  <input type="radio" name="radio" value="Cash" required>
+  <span class="checkmark"></span>
+
+</label>
+           </div>
+</form>
+            {% if count > 1 %}
+              <span class="span1">Thankyou for booking with Travelar for the {{count}} time.{{fname}} you have been provided with a special discount for this booking .Keep travelling with us and enjoy the special discounts!!</span>
+            {% else %}
+            <span></span>
+            {% endif %}
+
+            </div>
+        </div>
+
+      </body>
+      </html>

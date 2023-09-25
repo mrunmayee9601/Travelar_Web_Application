@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/F1.css' %}"  />
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="v1_2">
+        <div class="v24_8">
+
+        <div class="v8_17"></div>
+        <div class="v1_5"></div>
+        <div class="v11_2"></div>
+        <div class="v8_15"></div>
+        <span class="v183_3">Travelar</span>
+
+            <form method="POST" action="{% url 'fbook'%}">
+                {% csrf_token %}
+                 <div class="v17_0">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a> </li>
+                    <li><a href="{% url 'packages' %}">Packages</a> </li>
+                    <li><a href="{% url 'hotel' %}">Hotels</a> </li>
+                    <li class="active"><a href="{% url 'flights' %}">Flights</a> </li>
+                    <li><a href="{% url 'review' %}">Reviews</a> </li>
+                    <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+                </ul>
+            </div>
+            <div class="v1_12">
+
+                <select name="From"id="From"required>
+                    <option value="">None</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+
+                </select>
+                <br>
+            </div>
+            <div class="v13_1">
+                <select name="class"id="class"required>
+                    <option value="">Class</option>
+                    <option value=" Economy">Economy</option>
+                    <option value="Business">Business</option>
+
+                </select>
+                <br>
+            </div>
+            <div class="v13_2">
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="v13_3">
+                <select name="To" required>
+                    <option value="">None</option>
+                    <option value="Cochin">Cochin</option>
+                    <option value="Shimla">Shimla</option>
+
+
+                </select>
+                <br>
+            </div>
+
+            <div class="adults">
+                <select name="adults" id="adults" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+                <br>
+            </div>
+
+
+
+            <span class="v12_9">From:</span>
+            <span class="v12_14">Class:</span>
+            <span class="v12_10">To:</span>
+            <span class="v12_11">Date of Travel:</span>
+            <span class="A1"> Seats:</span>
+
+            <div class="v13_4">
+                <input type="submit" value="Book" id="sub">
+            </div>
+
+
+        </form>
+        <span id="user">Hello, {{request.user}} </span>
+        <div class="log1">
+        <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+        </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

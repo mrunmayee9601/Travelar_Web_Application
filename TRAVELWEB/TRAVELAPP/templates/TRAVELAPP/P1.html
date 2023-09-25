@@ -1,0 +1,193 @@
+<!DOCTYPE html><html><head>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/P1.css' %}"  />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <title>Document</title></head><body>
+    <div class="v212_1">
+
+        <div class="v51_8">
+            <ul>
+                <li ><a href="{% url 'home' %}">Home</a> </li>
+                <li class="active"><a href="#">Packages</a> </li>
+                <li><a href="{% url 'hotel' %}">Hotels</a> </li>
+                <li><a href="{% url 'flights' %}">Flights</a> </li>
+                <li><a href="{% url 'review' %}">Reviews</a> </li>
+                <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+            </ul>
+    </div>
+    <span id="user">Hello, {{request.user}} </span>
+    <div class="log1">
+    <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+    </div>
+
+        <span class="v212_10">Travelar</span>
+
+<div class="wrapper">
+          <!-----------BOX:1------------>
+  <div class="item">
+        <div class="v212_97">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+        <textarea name= price class="v142_17" readonly>Rs.4499/-*</textarea>
+                <div class="v209_1"><div class="v142_14">
+            <div class="v51_28">
+                <input type="submit" value="Book Now" >
+            </div>
+        </div></div>
+                <div class="v209_0"></div>
+        </div><div class="name"></div>
+
+             <div class="v218_5">
+        <textarea name=p_name  class="v218_0" readonly> Exotic Goa 3N4D</textarea>
+         <textarea  name=duration class="v218_1" readonly>Duration: 03 Nights/04 Days                  Starts @4,499/-* PP (3* Hotel) </textarea>
+        <textarea  name=inclusion class="v218_3" >Package Inclusions: </textarea>
+        <textarea rows='8' name=inclusions class="v218_4" readonly>- 3 Nights Accommodation            - Airport/Station Transfers              - Welcome Drink On Arrival             - Daily Breakfast                                 - One day Sightseeing Of goa </textarea></div>
+        </div>
+    </form>
+
+                <!-----------BOX:4------------>
+
+ <div class="item">
+
+        <div class="v212_534">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+            <textarea name= price class="v212_565" readonly>Rs.8499/-*</textarea>
+            <div class="v212_566"><div class="v212_567">
+        </div>
+                </div><div class="v212_570"></div>
+                <div class="book">
+                    <input type="submit"class="s1" value="Book Now" >
+                </div>
+           <div class="v218_6">
+               <textarea name=p_name class="v218_7" readonly> Exotic Sikkim 5N6D</textarea>
+               <textarea  name=duration class="v218_1" readonly>Duration: 05 Nights / 06 Days      Starts @ 8,499/-* PP (3* Hotel)</textarea>
+        <textarea  name=inclusion class="v218_9" readonly>  Package Inclusions:</textarea>
+               <textarea rows='8' name=inclusions class="v218_4" readonly >- 5 Nights Accommodation           - Airport/Station Transfer                           - Welcome Drink On Arrival                      - Daily Breakfast                                        - Sightseeing Of Tsmgo lake, baba mandir, Nathula pass </textarea>
+</div>
+
+</div>
+</form>
+    </div>
+
+               <!-----------BOX:3------------>
+  <div class="item">
+
+        <div class="v212_611">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+      <textarea name= price class="v212_642" readonly>Rs.6499/-*</textarea><div class="v212_643">
+            <div class="v212_644">
+                <input type="submit"class="s2" value="Book Now" >
+        </div>
+            <div class="v212_645"></div></div><div class="v212_647"></div>
+
+             <div class="v218_11">
+     <textarea name=p_name class="v218_12" readonly> Exotic Kerla 3N4D</textarea>
+    <textarea name=duration class="v218_13" readonly>Duration: 03 Nights / 04 Days       Starts @ 6,499/-* PP (3* Hotel)
+            </textarea>
+                 <textarea name=inclusion class="v218_14" readonly>Package Inclusions:</textarea>
+                 <textarea  rows='8' name=inclusions class="v218_15" readonly>- 3 Nights Accommodation                             - Airport/Station Transfers
+- Welcome Drink On Arrival
+- Daily Breakfast
+- Sightseeing Of Kovalam and Poovar
+</textarea> </div>
+</div>
+</form>
+  </div>
+
+                   <!-----------BOX:2------------>
+  <div class="item">
+
+        <div class="p212_534">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+            <textarea name= price class="p212_565" readonly>Rs.8499/-*</textarea>
+            <div class="p212_566"><div class="p212_567">
+                <input type="submit"class="s3" value="Book Now" >
+
+
+        </div>
+                </div><div class="p212_570"></div>
+
+           <div class="p218_6">
+     <textarea name=p_name class="p218_7" readonly> Exotic Pondicherry 4N5D</textarea>
+               <textarea name=duration class="p218_8" readonly>Duration: 04 Nights/05 Days       Starts @ 8,499/-* PP (3* Hotel)</textarea>
+        <span name=inclusion class="p218_9" readonly>Package Inclusions:</span>
+               <textarea  rows='9' name=inclusions class="p218_10" readonly>- 4 Nights Accommodation
+- Airport/Station Transfers
+- Welcome Drink On Arrival
+- Daily Breakfast
+- Sightseeing Of Pondicherry Museum,Paradise Beach
+         </textarea>
+</div>
+      </form>
+</div>
+    </div>
+
+                       <!-----------BOX:5------------>
+  <div class="item">
+
+        <div class="s212_534">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+            <textarea name= price class="s212_565" readonly>Rs.6499/-*</textarea>
+            <div class="s212_566"><div class="p212_567">
+                <input type="submit"class="s4" value="Book Now" >
+        </div>
+                </div><div class="s212_570"></div>
+
+           <div class="s218_6">
+               <textarea name=p_name class="s218_7" readonly> Exotic Rajastan 3N4D</textarea>
+               <textarea name=duration class="s218_8" readonly>Duration: 03 Nights / 04 Days              Starts @ 6,499/-* PP (3* Hotel)</textarea>
+        <textarea name=inclusion class="s218_9" readonly>  Package Inclusions:</textarea>
+               <textarea  rows='8' name=inclusions class="s218_10" readonly>- 5 Nights Accommodation
+- Airport/Station Transfers
+- Welcome Drink On Arrival
+- Daily Breakfast
+- Sightseeing Of Jodhpur,Udaipur,Agra.
+</textarea>
+</div>
+      </form>
+</div>
+    </div>
+
+                          <!-----------BOX:6------------>
+  <div class="item">
+
+        <div class="m212_534">
+            <form enctype="multipart/form-data" method="post" action="{% url 'pbook' %}">
+                     {% csrf_token %}
+            <textarea name= price class="m212_565" readonly>Rs.3499/-*</textarea>
+            <div class="m212_566"><div class="p212_567">
+
+                <input type="submit"class="s5" value="Book Now" >
+        </div>
+                </div><div class="m212_570"></div>
+
+           <div class="m218_6" >
+               <textarea name=p_name class="s218_7" readonly> Exotic Mumbai 2N3D</textarea>
+               <textarea name=duration class="m218_8" readonly>    Duration: 02 Nights / 03 Days
+   Starts @ 3,499/-* PP (2* Hotel)</textarea>
+        <textarea name=inclusion class="m218_9" readonly>Package Inclusions:</textarea>
+               <textarea  rows='8' name=inclusions class="m218_10" readonly>- 2 Nights Accommodation
+- Airport/Station Transfers
+- Welcome Drink On Arrival
+- Sightseeing Of Gate way of india,Girgaon Chowpatty,Marine drive
+</textarea>
+</div>
+      </form>
+</div>
+    </div>
+</div><!--wrapper div-->
+
+    <div  class="v218_19"></div>
+       <span class="v139_0">Our Hot Selling Packages</span>
+        <div class="v212_649"><div class="v142_454"></div>
+
+
+
+            </div>
+        </div></body></html>

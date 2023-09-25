@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+  {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Register.css' %}"  />
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="v175_19">
+        <div class="v175_54">
+            <div class="v175_21">
+                <div class="error_messages">
+                    {{form.errors}}
+                </div>
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="v175_53">
+                    <div class="v171_9">
+                        <input type="submit" value="Sign Up" id="sub">
+                    </div>
+                </div>
+            <span class="v175_22">First Name</span>
+            <div class="v175_42">
+                {{form.last_name}}
+            </div>
+            <div class="v175_43">
+               {{form.username}}
+            </div>
+            <div class="last_name">
+                {{form.email}}
+            </div>
+
+            <div class="v175_46">
+                {{form.first_name}}
+            </div>
+            <div class="v175_47">
+                {{form.password1}}
+            </div>
+            <div class="v175_48">
+                {{form.password2}}
+
+            </div>
+            <span class="last">Last Name</span>
+            <span class="v175_25">Email Id</span><span class="v175_26">Username</span><span
+                class="v175_27">Password
+            </span> </span><br><span class="v175_31">
+                    Confirm Password</span>
+            </form>
+        </div>
+
+            <span class="v175_32"><a href="{% url 'Login' %}" >Already have an account? Sign In</a></span>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Sansita&display=swap" rel="stylesheet" />
+     {% load static %}
+        <link rel="stylesheet" href="{% static 'css/Login.css' %}"  />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="v173_2">
+        <div class="v174_0"></div>
+        <div class="v174_1"></div>
+        <div class="v174_2"></div>
+        <div class="v174_3"></div><span class="v175_4">password</span>
+        <div class="v175_58">
+            <form method="POST" action="">
+                {% csrf_token %}
+            <span class="v175_2">username</span>
+            <div class="v175_5">
+                <input type="text" id="uname" name="uname" required><br>
+            </div>
+            <div class="v175_14">
+                <input type="password" id="pwd" name="pwd" required>
+            </div>
+            <div class="v175_8"></div>
+                <div class="v175_9"></div><span class="v175_10"><a href="{% url 'reset_password' %}" >Forgot password?</a></span>
+            <span class="v175_13"><a href="{% url 'Register' %}" > Don’t have an
+                account? Sign up</a>
+            </span>
+            <div class="v175_55">
+                <div class="v175_12">
+                    <input type="submit" value="Sign In" id="sub">
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="v175_59"><span class="v174_4"> Welcome
+                Wanderers !!
+            {% for message in messages %}
+                <p id="messages">{{message}}</p>
+            {% endfor %}
+            </span>
+
+                </div>
+            <div class="v175_16">
+                <ul>
+                    <li><a class="a1" href="{% url 'Register' %}">Sign Up</a> </li>
+                </ul>
+            </div>
+            </span><span class="v175_17">Create an account</span>
+        </div>
+    </div>
+</body>
+
+</html>

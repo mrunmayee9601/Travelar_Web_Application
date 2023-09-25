@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/AddReview.css' %}"  />
+    <title>Document</title></head>
+    <body>
+        <div class="v273_1">
+            <div class="v273_2"></div>
+            <div class="v51_8">
+              <div class="v51_9">
+                  <ul>
+                      <li ><a href="{% url 'home' %}">Home</a> </li>
+                      <li><a href="{% url 'packages' %}">Packages</a> </li>
+                      <li><a href="{% url 'hotel' %}">Hotels</a> </li>
+                      <li><a href="{% url 'flights' %}">Flights</a> </li>
+                      <li class="active"><a href="{% url 'review' %}">Reviews</a> </li>
+                      <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+                  </ul>
+              </div>
+          </div>
+          <span id="user">Hello, {{request.user}} </span>
+          <div class="log1">
+          <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+          </div>
+            <span class="v273_3">We’re addresing a few issues</span>
+            <span class="v273_4">First Name :</span>
+            <span class="v273_13">Email id :</span>
+            <span class="v273_15">Enter your review here :</span>
+            <span class="v273_8">Last Name :</span>
+            <span class="v273_6">Leave your review below</span>
+            <form method="POST" action="{% url 'reviewcnf' %}">
+                {% csrf_token %}
+             <div class="v273_7">
+                   <input type="text" name="f_name" readonly value="{{request.user.first_name}}" rows="1" cols="27" style="border: 2px solid black; font-size: 17pt;">
+              </div>
+            <div class="v273_14">
+               <input type="email" name="email_id" value="{{request.user.email}}" readonly  rows="1" cols="27" style="border: 2px solid black; font-size: 17pt;">
+            </div>
+            <div class="v273_16">
+
+             <input type= "text" name="review"
+                     style="border: 2px solid black;
+                             font-size: 17pt; width: 500px; height: 100px;">
+                        </div>
+            <div class="v273_10">
+               <input type="text" name="l_name" value="{{request.user.last_name}}" rows="1" cols="27" style="border: 2px solid black; font-size: 17pt">
+            </div>
+
+            <!--rating-->
+
+        <div class="rating-wrapper">
+             <div class="stars">
+                    <input type="radio" name= "rating" value="5 stars" id="star-1">
+                    <label for="star-1"></label>
+                     <input type="radio" name= "rating" value="4 stars" id="star-2">
+                    <label for="star-2"></label>
+                     <input type="radio" name= "rating" value="3 stars" id="star-3">
+                    <label for="star-3"></label>
+                     <input type="radio" name= "rating" value="2 stars" id="star-4">
+                    <label for="star-4"></label>
+                     <input type="radio" name= "rating" value="1 star" id="star-5">
+                    <label for="star-5"></label>
+                </div>
+        </div>
+            <span class="v273_17">Thanks for giving us your review !</span>
+            <!--submit-->
+            <div class="p212_567">
+        <input type="submit" value="Submit">
+     </div>
+      </form>
+        </div>
+    </body></html>

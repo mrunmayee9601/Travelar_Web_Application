@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/HotelConfirm.css' %}"  />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" /><link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title></head>
+
+    <body>
+        <div class="v229_2">
+            <div class="v229_3"></div>
+            <span class="v229_6">BOOK YOUR Hotel</span>
+            <span class="v238_2">Travelar</span>
+            <span class="v229_7">
+                <img  src="{{Hotel.pic.url}}" alt="alternatetext">
+            </span>
+            <span class="v242_20">Confirmation Page</span>
+            <span class="v243_0">Thank you so much for booking with Travelar</span>
+           <span class="phone">Kindly enter your Mobile Number below in the form!</span>
+            <form method="post" action="{% url 'HConfirmed' %}">
+                {% csrf_token %}
+                 <span class="v233_9"> Name of Hotel :</span>
+
+            <span class="v233_12">Check-in date :</span>
+            <span class="v238_23">First name :</span>
+           <span class="address">Address of Hotel:</span>
+            <span class="v239_2">Phone no :</span>
+            <span class="v238_28">Last name :</span>
+            <span class="v239_5">Email id :</span>
+            <span class="v240_5">Total amount :</span>
+            <span class="v239_9">Type of Room:</span>
+            <span class="v238_19">Check-out date :</span>
+
+            <div class="v230_6">
+            <input type="text" id="pname" name="pname" value="{{Hotel.Hotel_name}}" readonly></div>
+            <div class="v238_8">
+            <input type="text" id="check-in" name="check-in" value="{{Search.checkin}}" readonly></div>
+            <div class="v238_21">
+            <input type="text" id="fname" name="fname" value="{{Firstname}}" readonly></div>
+            <div class="v239_0">
+            <input type="text" id="Phn" name="Phn" required></div>
+            <div class="v239_6">
+            <input type="text" id="travelers" name="travelers" value="{{Hotel.room_type}}" readonly></div>
+            <div class="v238_16">
+            <input type="text" id="check-out" name="check-out" value="{{Search.checkout}}" readonly></div>
+            <div class="v238_22">
+            <input type="text" id="lname" name="lname" value="{{Lastname}}" readonly></div>
+            <div class="v239_1">
+             <input type="text" id="EmailId" name="EmailId" value="{{Mail}}" readonly></div>
+            <div class="v240_10">
+             <input type="text" id="Tamount" name="Tamount" value="{{Total}}" readonly></div>
+
+           <div class="add">
+              <input type="text" id="address" name="address" value="{{Hotel.Address}}" readonly></div>
+
+
+            <div class="v212_11">
+               <input type="submit" value="Confirm">
+            </div>
+            <a href="{% url 'hotel' %}">Back</a>
+           <div class= "p239">
+             <span class="p239_9">Mode of payment:</span>
+<label class="container">Debit/Credit card
+  <input type="radio" checked="checked" name="radio" value="Debit/Credit card">
+  <span class="checkmark"></span>
+</label>
+<label class="container">UPI
+  <input type="radio" name="radio" value="UPI">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Cash
+  <input type="radio" name="radio" value="Cash">
+  <span class="checkmark"></span>
+</label>
+            {% if count > 1 %}
+            <span class="span1">Thankyou for booking with Travelar for {{count}} times.{{fname}} you have been provided with a special discount for this booking .Keep travelling with us and enjoy the special discounts!!</span>
+            {% else %}
+            <span></span>
+            {% endif %}
+            </div>
+
+            </form>
+        </div></body></html>

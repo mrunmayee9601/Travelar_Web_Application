@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+        <link rel="stylesheet" href="{% static 'css/Hshimla.css' %}"  />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="v9_2">
+        <div class="wrapper">
+            <div class="hotel1">
+            <div class="v12_2"></div>
+                <div class="v12_1"></div>
+                <form enctype="multipart/form-data" method="post" action="{% url 'HotelConfirm' %}">
+                     {% csrf_token %}
+          <textarea class="v12_3" name="hotelname" readonly>GOLDENFERN RESORT SHIMLA</textarea>
+                <span class="v12_5">MySafety-sanitized and Safe Stays</span><span class="v12_8">-Free Wifi <br>-Kids Play Area<br>-Free Parking<br>Price Per Night:- Rs</span>
+                <textarea class="cost" readonly name="cost">3170</textarea>
+            <div class="v51_28">
+                <input type="submit" value="Book Now" >
+            </div>
+            </form>
+            </div>
+            <div class="hotel2">
+                <div class="whitediv"></div>
+                <div class="image"></div>
+                <form enctype="multipart/form-data"  method="post"action="{% url 'HotelConfirm' %}">
+                     {% csrf_token %}
+          <textarea class="hname" name="hotelname" readonly>ROYAL TULIP SHIMLA KUFRI</textarea><span
+                class="safety">MySafety-sanitized and Safe Stays</span><span class="features">-Spa <br>-Jacuzzi<br>-Yoga<br>Price Per Night:-Rs </span>
+                <textarea class="price" name="cost" readonly>5924</textarea>
+            <div class="book">
+                <input type="submit"class="s1" value="Book Now" >
+            </div>
+            </form>
+         </div>
+         <div class="hotel3">
+            <div class="whitediv3"></div>
+            <div class="image3"></div>
+            <form method="post" enctype="multipart/form-data" action="{% url 'HotelConfirm' %}" >
+                 {% csrf_token %}
+      <textarea class="hname3" name="hotelname" readonly>TAJ THEOG RESORT AND SPA SHIMLA</textarea><span
+            class="safety3">MySafety-sanitized and Safe Stays</span><span class="features3">-Free Parking <br>-Kids Play Area<br>-Childcare Services<br>Price Per Night:-Rs </span>
+            <textarea name="cost" class="price1" readonly>17200</textarea>
+        <div class="book3">
+            <input type="submit"class="s2" value="Book Now" >
+        </div>
+        </form>
+        </div>
+
+        </div>
+       <span class="v51_7">Travelar</span>
+        <div class="v51_8">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a> </li>
+                    <li><a href="{% url 'packages' %}">Packages</a> </li>
+                    <li class="active"><a href="{% url 'hotel' %}">Hotels</a> </li>
+                    <li><a href="{% url 'flights' %}">Flights</a> </li>
+                    <li><a href="{% url 'review' %}">Reviews</a> </li>
+                    <li><a href="{% url 'contact' %}">Contact</a> </li>
+
+                </ul>
+        </div>
+        <span id="user">Hello, {{request.user}} </span>
+        <div class="log1">
+        <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+        </div>
+    </div>
+</body>
+
+</html>

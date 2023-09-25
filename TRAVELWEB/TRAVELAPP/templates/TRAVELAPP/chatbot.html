@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/chatbot.css' %}"  />
+    <title>Document</title>
+
+</head>
+
+<span class="v183_3">Travelar</span>
+<body style="background-color:#defedf;">
+    <div class="v17_0">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a> </li>
+            <li><a href="{% url 'packages' %}">Packages</a> </li>
+            <li><a href="{% url 'hotel' %}">Hotels</a> </li>
+            <li><a href="{% url 'flights' %}">Flights</a> </li>
+            <li><a href="{% url 'review' %}">Reviews</a> </li>
+            <li class="active"><a href="{% url 'contact' %}">Contact</a> </li>
+        </ul>
+    </div>
+
+    <span id="user">Hello, {{request.user}} </span>
+    <div class="log1">
+        <a class="log" href="{% url 'LogoutUser' %}">Logout</a>
+    </div>
+
+    <section class="main">
+        <div class="user-area">
+            <img src="{% static 'Images/user.png'  %}">
+        </div>
+        <div class="chatarea-main">
+            <div class="chatarea-outer">
+                <!-- <div class="chatarea-inner user">Hello hi, how area you, i am good. What about you!</div>
+                    <div class="chatarea-inner chatbot">Hello hi, how area you, i am good. What about you!</div>
+                    <div class="chatarea-inner user">Hello hi, how area you, i am good. What about you!</div> -->
+            </div>
+        </div>
+        <div class="chatbot-area">
+            <img src="{% static 'Images/chatbot.png'  %}">
+        </div>
+        <button id="mic"><i class="flaticon-microphone"></i></button>
+    </section>
+    <script src="{% static 'js/main1.js'  %}"></script>
+</body>
+
+</html>
